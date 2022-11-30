@@ -1,0 +1,13 @@
+blob_container: camimagessimplepython
+blob_connection_str_env_var: AZURE_STORAGE_CONNECTION_STRING
+timeout: 10
+cameras:
+  cam1:
+    name: Cam01
+    connection_str_env_var: CAMERA1_CONNECTION_STRING
+  cam2:
+    name: Cam02
+    connection_str_env_var: CAMERA2_CONNECTION_STRING
+  cam3:
+    name: Cam03
+    connection_str_env_var: CAMERA3_CONNECTION_STRING
