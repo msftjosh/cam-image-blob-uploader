@@ -6,7 +6,7 @@ The purpose of these scripts is to allow a system to connect to one or multiple 
 ## Pre-Requisites
 - A Working Network Camera that has a URL to pull the current static image (Refer to manufacturers documentation to check capability and determine the specific URL).
 - An active [Azure account](https://azure.microsoft.com/en-us/get-started) if you don't have one you can [create a free account](https://azure.microsoft.com/free/).
-  - [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create)
+  - Setup an [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create)
 - Python (Verified with3.8.10, but other versions 3.7+ that support Azure Python SDK should work as well)
 - PIP
 - Azure Python SDK Storage Blob library
