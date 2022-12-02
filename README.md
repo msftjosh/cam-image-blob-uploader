@@ -6,8 +6,8 @@ The purpose of these scripts is to allow a system to connect to one or multiple 
 ## Pre-Requisites
 - A Working Network Camera that has a URL to pull the current static image (Refer to manufacturers documentation to check capability and determine the specific URL).
 - An active [Azure account](https://azure.microsoft.com/en-us/get-started) if you don't have one you can [create a free account](https://azure.microsoft.com/free/).
-  - Setup an [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create)
-- Python (Verified with3.8.10, but other versions 3.7+ that support Azure Python SDK should work as well)
+  - Setup an [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create).
+- Python (Verified with 3.8.10, but other versions 3.7+ that support Azure Python SDK should work as well.)
 - PIP
 - Azure Python SDK Storage Blob library
 ```
@@ -17,15 +17,15 @@ pip install azure-storage-blob
 
 ## Usage
 - Ensure all Pre-Requisites are met
-- In your target storge account create a [blob container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal#create-a-container)
+- In your target storge account create a [blob container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal#create-a-container).
 - Create a [SAS token for your blob container](https://learn.microsoft.com/en-us/rest/api/storageservices/create-account-sas) it will be used in the next step.
-- Configure an environment Variable to pass the SAS URL to the script (Recommended: Call the variable: `AZURE_STORAGE_CONNECTION_STRING` if you use a different environment variable name then be sure to update the config.yaml.  
+- Configure an environment Variable to pass the SAS URL to the script (Recommended: name the variable: `AZURE_STORAGE_CONNECTION_STRING` if you use a different environment variable name then be sure to update the config.yaml.  
   Example:
   ```
   export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=<storage-account-name>;AccountKey=<key>;EndpointSuffix=core.windows.net"
   ```
-- Like you did with the Storage Account connection string configure an environment variable for each camera ensuring the variable name matches what you defined in the config.yaml for each camera
-  Example (be sure to set the URL to match with your specific Camera's image URL):
+- Configure an connection string environment variable for each camera.
+  Example (be sure to set the URL to match with your specific Camera's static image URL):
   ```
   export CAMERA1_CONNECTION_STRING="https://<username>:<password>@10.20.30.101/tmpfs/auto.jpg"
   export CAMERA2_CONNECTION_STRING="https://<username>:<password>@10.20.30.102/tmpfs/auto.jpg"
@@ -70,3 +70,11 @@ pip install azure-storage-blob
   ```
   python main.py
   ```
+## Notes
+- The current version uses SAS tokens, use care as anyone with access to the SAS token can access your storage with whatever level of permissions you have set for the token.
+### Current Known Limitations
+- The current version does not clean up the cached images which over time could fill up your local storage, so be sure to occasionally remove old images from the `img_cache` directory - you could setup this up as a simple cron job.
+
+
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
