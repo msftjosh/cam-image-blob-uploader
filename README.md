@@ -1,7 +1,7 @@
 # cam-image-blob-uploader
-### Retrieve Images from Network Cameras and Upload them to Azure Blob
+### Retrieve Images from Network Cameras and Upload them to Azure Blob Storage
 
-The purpose of these scripts is to allow a system to connect to one or multiple cameras (or camera views) and pull a current still image and upload it to Azure Blob.
+The purpose of these scripts is to allow a system to connect to one or multiple cameras (or camera views) and pull a current still image and upload it to Azure Blob Storage.
 
 ## Pre-Requisites
 - A Working Network Camera that has a URL to pull the current static image (Refer to manufacturers documentation to check capability and determine the specific URL).
