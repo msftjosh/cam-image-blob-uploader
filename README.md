@@ -18,7 +18,7 @@ The purpose of these scripts is to allow a system to connect to one or multiple 
 ## Usage
 - Ensure all Pre-Requisites are met
 - In your target storge account create a [blob container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal#create-a-container).
-- Create a [SAS token for your blob container](https://learn.microsoft.com/en-us/rest/api/storageservices/create-account-sas).
+- Either Retrieve one of your Storage Account's Access Key Connection String or Generate a scoped SAS token and retrieve it's connection string. See: [Manage storage account access keys](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal).
 - Configure an environment variable to pass the SAS URL to the script (Recommended: name the variable: `AZURE_STORAGE_CONNECTION_STRING` if you use a different environment variable name be sure to update the config.yaml.  
   Linux/Mac Example:
   ```
