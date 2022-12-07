@@ -1,4 +1,4 @@
-blob_container: camimagessimplepython
+blob_container: cameraimagescontainer
 blob_connection_str_env_var: AZURE_STORAGE_CONNECTION_STRING
 timeout: 10
 cameras:
